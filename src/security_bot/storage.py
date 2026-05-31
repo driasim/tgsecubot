@@ -103,7 +103,10 @@ class SettingsStore:
     def _load(self) -> None:
         if not self.path.exists():
             return
-        raw: dict[str, Any] = json.loads(self.path.read_text(encoding="utf-8"))
+        try:
+            raw: dict[str, Any] = json.loads(self.path.read_text(encoding="utf-8"))
+        except (json.JSONDecodeError, OSError):
+            return
         for chat_id, value in raw.items():
             recipients = {
                 username: Recipient(**recipient)

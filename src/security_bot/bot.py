@@ -883,6 +883,12 @@ def parse_args() -> argparse.Namespace:
         type=Path,
         help="JSON file used for persistent settings",
     )
+    parser.add_argument(
+        "--poll-interval",
+        type=int,
+        default=int(os.getenv("POLL_INTERVAL", "0")),
+        help="Polling interval in seconds (0 for default)",
+    )
     return parser.parse_args()
 
 

@@ -883,6 +883,12 @@ def parse_args() -> argparse.Namespace:
         type=Path,
         help="JSON file used for persistent settings",
     )
+    parser.add_argument(
+        "--version",
+        action="version",
+        version="tgsecubot 0.1.0",
+        help="Show program version and exit",
+    )
     return parser.parse_args()
 
 

@@ -883,6 +883,11 @@ def parse_args() -> argparse.Namespace:
         type=Path,
         help="JSON file used for persistent settings",
     )
+    parser.add_argument(
+        "--no-color",
+        action="store_true",
+        help="Disable colored terminal output",
+    )
     return parser.parse_args()
 
 

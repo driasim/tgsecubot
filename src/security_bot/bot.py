@@ -883,6 +883,12 @@ def parse_args() -> argparse.Namespace:
         type=Path,
         help="JSON file used for persistent settings",
     )
+    parser.add_argument(
+        "-v",
+        "--verbose",
+        action="store_true",
+        help="Enable verbose/debug logging output",
+    )
     return parser.parse_args()
 
 

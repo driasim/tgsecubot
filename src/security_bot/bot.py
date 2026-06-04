@@ -883,6 +883,12 @@ def parse_args() -> argparse.Namespace:
         type=Path,
         help="JSON file used for persistent settings",
     )
+    parser.add_argument(
+        "--allowed-users",
+        nargs="*",
+        default=[],
+        help="Space-separated list of allowed Telegram usernames",
+    )
     return parser.parse_args()
 
 

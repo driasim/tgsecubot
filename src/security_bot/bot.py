@@ -883,6 +883,11 @@ def parse_args() -> argparse.Namespace:
         type=Path,
         help="JSON file used for persistent settings",
     )
+    parser.add_argument(
+        "--webhook-url",
+        default=os.getenv("WEBHOOK_URL"),
+        help="Webhook URL for receiving updates instead of polling",
+    )
     return parser.parse_args()
 
 

@@ -883,6 +883,13 @@ def parse_args() -> argparse.Namespace:
         type=Path,
         help="JSON file used for persistent settings",
     )
+    parser.add_argument(
+        "-c",
+        "--config",
+        default=os.getenv("SECURITY_BOT_CONFIG", "config.toml"),
+        type=Path,
+        help="Path to configuration file",
+    )
     return parser.parse_args()
 
 
